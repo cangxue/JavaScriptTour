@@ -236,7 +236,62 @@ button2.click(function () {
     setTimeout(popupTestWindow, 100);
 });
 
+// 动画
+var div = $('#test-show-hide');
+div.hide(3000); // 在3秒钟内逐渐消失
+div.show('slow'); // 在0.6秒钟内逐渐显示
+div.slideUp(3000); // 在3秒钟内逐渐向上消失
+div.fadeOut('slow'); // 在0.6秒内淡出
 
 
+var div = $('#test-animate');
+div.animate({
+    opacity: 0.25,
+    width: '256px',
+    height: '256px'
+}, 3000, function () {
+    console.log('动画已结束');
+    // 恢复至初始状态:
+    $(this).css('opacity', '1.0').css('width', '128px').css('height', '128px');
+});
+
+
+var div = $('#test-animates');
+// 动画效果：slideDown - 暂停 - 放大 - 暂停 - 缩小
+div.slideDown(2000)
+   .delay(1000)
+   .animate({
+       width: '256px',
+       height: '256px'
+   }, 2000)
+   .delay(1000)
+   .animate({
+       width: '128px',
+       height: '128px'
+   }, 2000);
+}
+
+
+// AJAX
+var jqxhr = $.ajax('/api/categories', {
+    dataType: 'json'
+});
+
+var jqxhr = $.get('/path/to/resource', {
+    name: 'Bob Lee',
+    check: 1
+});
+
+var jqxhr = $.post('/path/to/resource', {
+    name: 'Bob Lee',
+    check: 1
+});
+
+var jqxhr = $.getJSON('/path/to/resource', {
+    name: 'Bob Lee',
+    check: 1
+}).done(function (data) {
+    // data已经被解析为JSON对象了
+})
 
 
