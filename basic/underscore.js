@@ -164,6 +164,59 @@ var log = _.bind(console.log, console);
 _.delay(log, 2000, 'Hello,', 'world!');
 // 2秒后打印'Hello, world!':
 
+// Objects
+// keys / allKeys
+function Student(name, age) {
+    this.name = name;
+    this.age = age;
+}
+Student.prototype.school = 'No.1 Middle School';
+var xiaoming = new Student('小明', 20);
+_.allKeys(xiaoming); // ['name', 'age', 'school']
+
+// values
+
+var obj = {
+    name: '小明',
+    age: 20
+};
+
+_.values(obj); // ['小明', 20]
+
+// mapObject
+var obj = { a: 1, b: 2, c: 3 };
+// 注意传入的函数签名，value在前，key在后:
+_.mapObject(obj, (v, k) => 100 + v); // { a: 101, b: 102, c: 103 }
+
+// invert
+var obj = {
+    Adam: 90,
+    Lisa: 85,
+    Bart: 59
+};
+_.invert(obj); // { '59': 'Bart', '85': 'Lisa', '90': 'Adam' }
+
+// extend / extendOwn
+var a = {name: 'Bob', age: 20};
+_.extend(a, {age: 15}, {age: 88, city: 'Beijing'}); // {name: 'Bob', age: 88, city: 'Beijing'}
+// 变量a的内容也改变了：
+a; // {name: 'Bob', age: 88, city: 'Beijing'}
+
+// clone
+var source = {
+    name: '小明',
+    age: 20,
+    skills: ['JavaScript', 'CSS', 'HTML']
+};
+var copied = _.clone(source);
+
+// isEqual
+var o1 = { name: 'Bob', skills: { Java: 90, JavaScript: 99 }};
+var o2 = { name: 'Bob', skills: { JavaScript: 99, Java: 90 }};
+
+o1 === o2; // false
+_.isEqual(o1, o2); // true
+
 
 
 
