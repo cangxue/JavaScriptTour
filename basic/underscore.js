@@ -88,12 +88,81 @@ _.range(0, 30, 5); // [0, 5, 10, 15, 20, 25]
 _.range(0, -10, -1); // [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
 
 
+// Functions
+// bind
+var s = ' Hello  ';
+var fn = _.bind(s.trim, s);
+fn();
+// 输出Hello
+
+// partial
+var pow2N = _.partial(Math.pow, 2);
+pow2N(3); // 8
+pow2N(5); // 32
+pow2N(10); // 1024
+
+var cube = _.partial(Math.pow, _, 3);
+cube(3); // 27
+cube(5); // 125
+cube(10); // 1000
+
+// memoize
+var factorial = _.memoize(function(n) {
+    console.log('start calculate ' + n + '!...');
+    var s = 1, i = n;
+    while (i > 1) {
+        s = s * i;
+        i --;
+    }
+    console.log(n + '! = ' + s);
+    return s;
+});
+
+// 第一次调用:
+factorial(10); // 3628800
+// start calculate 10!...
+// 10! = 3628800
+
+// 第二次调用:
+factorial(10); // 3628800
+// 控制台没有输出
+var factorial = _.memoize(function(n) {
+    console.log('start calculate ' + n + '!...');
+    if (n < 2) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+});
+
+factorial(10); // 3628800
+// 输出结果说明factorial(1)~factorial(10)都已经缓存了:
+// start calculate 10!...
+// start calculate 9!...
+// start calculate 8!...
+// start calculate 7!...
+// start calculate 6!...
+// start calculate 5!...
+// start calculate 4!...
+// start calculate 3!...
+// start calculate 2!...
+// start calculate 1!...
+
+factorial(9); // 362880
+// console无输出
 
 
+// once
+var register = _.once(function () {
+    alert('Register ok!');
+});
 
+// delay
+// 2秒后调用alert():
+_.delay(alert, 2000);
 
-
-
+var log = _.bind(console.log, console);
+_.delay(log, 2000, 'Hello,', 'world!');
+// 2秒后打印'Hello, world!':
 
 
 
