@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello world</title>
+    <script>
+        function headFunction() {
+            document.getElementById("demo2").innerHTML="head中的函数";
+        }
+    </script>
+</head>
+<body>
+<h1>hello, world!</h1>
+<script>
+    document.write("<h3>这是标题</h3>");
+    document.write("<p>这是段落</p>");
+</script>
+<p id="demo2">head函数调用</p>
+<button type="button" onclick="headFunction()">点击一下</button>
+
+<p id="demo1">body函数调用</p>
+<button type="button" onclick="bodyFunction()">尝试一下</button>
+<script>
+    function bodyFunction() {
+        document.getElementById("demo1").innerHTML="body中的函数";
+    }
+</script>
+
+<p id="demo">js文件调用</p>
+<button type="button" onclick="helloFunction()">尝试一下</button>
+<script src="../js/hello.js"></script>
+
+<script>
+    window.alert("hello, world!")
+</script>
+
+<script>
+    a = 5;
+    b = 6;
+    c = a + b;
+    console.log(c);
+</script>
+</body>
+</html>
