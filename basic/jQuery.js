@@ -63,7 +63,7 @@ $('p.red,p.green'); // 把<p class="red">和<p class="green">都选出来
 $('ul.lang li.lang-javascript'); // [<li class="lang-javascript">JavaScript</li>]
 $('div.testing li.lang-javascript'); // [<li class="lang-javascript">JavaScript</li>]
 
-$('form.test p input'); // 在form表单选择被<p>包含的<input>
+$('form.demo p input'); // 在form表单选择被<p>包含的<input>
 
 // 子选择器（Child Selector）
 $('ul.lang>li.lang-javascript'); // 可以选出[<li class="lang-javascript">JavaScript</li>]
@@ -138,19 +138,19 @@ var sub = langs.slice(2, 4); // Swift, Scheme, 参数和数组的slice()方法�
 // 操作DOM
 // 修改Text和HTML
 <!-- HTML结构 -->
-<ul id="test-ul">
+<ul id="demo-ul">
     <li class="js">JavaScript</li>
     <li name="book">Java &amp; JavaScript</li>
 </ul>
-$('#test-ul li[name=book]').text(); // 'Java & JavaScript'
-$('#test-ul li[name=book]').html(); // 'Java &amp; JavaScript'
+$('#demo-ul li[name=book]').text(); // 'Java & JavaScript'
+$('#demo-ul li[name=book]').html(); // 'Java &amp; JavaScript'
 
-$('#test-ul li').text('JS');
+$('#demo-ul li').text('JS');
 
 
 // 修改CSS
 <!-- HTML结构 -->
-<ul id="test-css">
+<ul id="demo-css">
     <li class="lang dy"><span>JavaScript</span></li>
     <li class="lang"><span>Java</span></li>
     <li class="lang dy"><span>Python</span></li>
@@ -158,14 +158,14 @@ $('#test-ul li').text('JS');
     <li class="lang dy"><span>Scheme</span></li>
 </ul>
 
-$('#test-css li.dy>span').css('background-color', '#ffd351').css('color', 'red');
+$('#demo-css li.dy>span').css('background-color', '#ffd351').css('color', 'red');
 
-var div = $('#test-div');
+var div = $('#demo-div');
 div.css('color'); // '#000033', 获取CSS属性
 div.css('color', '#336699'); // 设置CSS属性
 div.css('color', ''); // 清除CSS属性
 
-var div = $('#test-div');
+var div = $('#demo-div');
 div.hasClass('highlight'); // false， class是否包含highlight
 div.addClass('highlight'); // 添加highlight这个class
 div.removeClass('highlight'); // 删除highlight这个class
@@ -195,12 +195,12 @@ ul.append(function (index, html) {
 // 事件
 /* HTML:
  *
- * <a id="test-link" href="#0">点我试试</a>
+ * <a id="demo-link" href="#0">点我试试</a>
  *
  */
 
 // 获取超链接的jQuery对象:
-var a = $('#test-link');
+var a = $('#demo-link');
 a.on('click', function () {
     alert('Hello!');
 });
@@ -237,14 +237,14 @@ button2.click(function () {
 });
 
 // 动画
-var div = $('#test-show-hide');
+var div = $('#demo-show-hide');
 div.hide(3000); // 在3秒钟内逐渐消失
 div.show('slow'); // 在0.6秒钟内逐渐显示
 div.slideUp(3000); // 在3秒钟内逐渐向上消失
 div.fadeOut('slow'); // 在0.6秒内淡出
 
 
-var div = $('#test-animate');
+var div = $('#demo-animate');
 div.animate({
     opacity: 0.25,
     width: '256px',
@@ -256,7 +256,7 @@ div.animate({
 });
 
 
-var div = $('#test-animates');
+var div = $('#demo-animates');
 // 动画效果：slideDown - 暂停 - 放大 - 暂停 - 缩小
 div.slideDown(2000)
    .delay(1000)

@@ -13,14 +13,14 @@
 //
 //     删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。
 
-// 返回ID为'test'的节点：
-var test = document.getElementById('test');
+// 返回ID为'demo'的节点：
+var test = document.getElementById('demo');
 
-// 先定位ID为'test-table'的节点，再返回其内部所有tr节点：
+// 先定位ID为'demo-table'的节点，再返回其内部所有tr节点：
 var trs = document.getElementById('test_table').getElementsByTagName('tr');
 
-// 先定位ID为'test-div'的节点，再返回其内部所有class包含red的节点：
-var reds = document.getElementById('test-div').getElementsByClassName('red');
+// 先定位ID为'demo-div'的节点，再返回其内部所有class包含red的节点：
+var reds = document.getElementById('demo-div').getElementsByClassName('red');
 
 // 获取节点test下的所有直属子节点:
 var cs = test.children;
@@ -97,7 +97,7 @@ for (i = 0; i < list.children.length; i++) {
     c = list.children[i]; // 拿到第i个子节点
 }
 
-var list = document.getElementById('test-list');
+var list = document.getElementById('demo-list');
 var lis = list.getElementsByClassName('lang');
 for(var i = 0 ; i < lis.length ; i++){
      for(var j = 1 ; j < lis.length-i ; j++){
@@ -121,7 +121,7 @@ removed === self; // true
 
 
 <!-- HTML结构 -->
-<ul id="test-list">
+<ul id="demo-list">
     <li>JavaScript</li>
     <li>Swift</li>
     <li>HTML</li>
@@ -129,7 +129,7 @@ removed === self; // true
     <li>CSS</li>
     <li>DirectX</li>
 </ul>
-var li = document.getElementById("test-list");
+var li = document.getElementById("demo-list");
 Array.from(li.children).filter(x=>!['JavaScript', 'HTML','CSS'].includes(x.innerHTML)).forEach(x=>li.removeChild(x))
 
 

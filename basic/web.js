@@ -32,7 +32,7 @@ alert('window inner size: ' + window.innerWidth + ' x ' + window.innerHeight);
 location.protocol; // 'http'
 location.host; // 'www.example.com'
 location.port; // '8080'
-location.pathname; // '/path/index.html'
+location.pathname; // '/path/index.demo'
 location.search; // '?a=1&b=2'
 location.hash; // 'TOP'
 

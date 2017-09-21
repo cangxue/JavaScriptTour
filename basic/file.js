@@ -4,9 +4,9 @@
 
 
 var
-    fileInput = document.getElementById('test-image-file'),
-    info = document.getElementById('test-file-info'),
-    preview = document.getElementById('test-image-preview');
+    fileInput = document.getElementById('demo-image-file'),
+    info = document.getElementById('demo-file-info'),
+    preview = document.getElementById('demo-image-preview');
 // 监听change事件:
 fileInput.addEventListener('change', function () {
     // 清除背景图片:

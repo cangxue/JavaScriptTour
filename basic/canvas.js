@@ -3,13 +3,13 @@
  */
 
 
-<canvas id="test-canvas" width="300" height="200"></canvas>
+<canvas id="demo-canvas" width="300" height="200"></canvas>
 
-<canvas id="test-stock" width="300" height="200">
+<canvas id="demo-stock" width="300" height="200">
     <p>Current Price: 25.51</p>
 </canvas>
 
-var canvas = document.getElementById('test-canvas');
+var canvas = document.getElementById('demo-canvas');
 if (canvas.getContext) {
     alert('你的浏览器支持Canvas!');
 } else {
@@ -22,7 +22,7 @@ gl = canvas.getContext("webgl");
 
 
 var
-    canvas = document.getElementById('test-shape-canvas'),
+    canvas = document.getElementById('demo-shape-canvas'),
     ctx = canvas.getContext('2d');
 ctx.clearRect(0, 0, 200, 200); // 设置(0,0)位置大小为200x200的矩形为透明的
 ctx.fillStyle = '#dddddd'; // 设置颜色
@@ -43,7 +43,7 @@ ctx.stroke(path);
 
 // 绘制文本
 var
-    canvas = document.getElementById('test-text-canvas'),
+    canvas = document.getElementById('demo-text-canvas'),
     ctx = canvas.getContext('2d');
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 ctx.shadowOffsetX = 2;
