@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grammar</title>
+</head>
+<body>
+
+<h1>我的网页</h1>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+<button type="button" onclick="myFunction()">点击这里</button>
+<button onclick='getElementById("demo4").innerHTML=Date()'>现在的时间是？？</button>
+<!--将修改自身元素的内容-->
+<button onclick="this.innerHTML=Date()">我的时间</button>
+
+<button onclick="displayDate()">现在的时间是?</button>
+
+<script>
+    a = 1; b = 2; c = a + b
+    document.getElementById("demo1").innerHTML = c;
+    
+    function myFunction() {
+        document.getElementById("demo1").innerHTML="你好世界！";
+	    document.getElementById("demo2").innerHTML="你最近怎么样?";
+    }
+
+    var carname="Kimi";
+    document.getElementById("demo3").innerHTML = carname;
+
+    // JavaScript 数据类型
+    // 字符串（String）、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空（Null）、未定义（Undefined）。
+
+    var person = {
+        firstname: "John",
+        lastname: "Doe",
+        age: 25
+    }
+    document.getElementById("demo3").innerHTML = person.firstname;
+
+    function displayDate() {
+        document.getElementById("demo4").innerHTML=Date();
+    }
+
+    time = 30; x=0;
+    if (time < 20) {
+        x = -1;
+    } else  {
+        x = 1;
+    }
+
+
+</script>
+
+</body>
+</html>
