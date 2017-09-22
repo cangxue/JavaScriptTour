@@ -19,6 +19,11 @@
 
 <button onclick="displayDate()">现在的时间是?</button>
 
+<!--正则表达式-->
+<p>替换 "microsoft" 为 "Runoob" :</p>
+<button onclick="myFunction2()">点我</button>
+<p id="demo5">请访问 Microsoft!</p>
+
 <script>
     a = 1; b = 2; c = a + b
     document.getElementById("demo1").innerHTML = c;
@@ -51,6 +56,25 @@
     } else  {
         x = 1;
     }
+
+
+    function myFunction2() {
+        var str = document.getElementById("demo5").innerHTML;
+        var txt = str.replace(/microsoft/i,"Runoob");
+        document.getElementById("demo5").innerHTML = txt;
+    }
+
+    var patt = /e/
+    patt.test("The best things in life are free!"); // ture
+
+    /e/.exec("The best things in life are free!"); // e
+
+    //  判断输入是否为数字、字母、下划线组成
+    function isValid(str) {
+        return /^\w+$/.test(str);
+    }
+    str = "12345abd_";
+    document.getElementById("demo5").innerHTML = isValid(str);
 
 
 </script>
