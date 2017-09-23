@@ -24,6 +24,20 @@
 <button onclick="myFunction2()">点我</button>
 <p id="demo5">请访问 Microsoft!</p>
 
+<button onclick="message()">Try it</button>
+
+<p>请输入 1 到 10 之间的数字：</p>
+<input id="numb">
+<button type="button" onclick="myFunction3()">提交</button>
+<p id="demo6"></p>
+
+<form action="demo_form.php" method="post">
+  <input type="text" name="fname" required="required">
+  <input type="submit" value="提交">
+</form>
+
+<p>点击提交按钮，如果输入框是空的，浏览器会提示错误信息。</p>
+
 <script>
     a = 1; b = 2; c = a + b
     document.getElementById("demo1").innerHTML = c;
@@ -76,6 +90,35 @@
     str = "12345abd_";
     document.getElementById("demo5").innerHTML = isValid(str);
 
+    var txt = "";
+    function message() {
+        try {
+            alert("Welcome guest!");
+        } catch (err) {
+            txt="本页有一个错误。\n\n";
+            txt+="错误描述：" + err.message + "\n\n";
+            txt+="点击确定继续。\n\n";
+            alert(txt);
+        }
+    }
+
+    document.getElementById("demo5").innerHTML = txt;
+
+    function myFunction3() {
+        var x, text;
+
+        // 获取 id="numb" 的值
+        x = document.getElementById("numb").value;
+
+        // 如果输入的值 x 不是数字或者小于 1 或者大于 10，则提示错误 Not a Number or less than one or greater than 10
+        if (isNaN(x) || x < 1 || x > 10) {
+            text = "输入错误";
+        } else {
+            text = "输入正确";
+        }
+        document.getElementById("demo").innerHTML = text;
+
+    }
 
 </script>
 
