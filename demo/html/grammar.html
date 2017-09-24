@@ -38,6 +38,11 @@
 
 <p>点击提交按钮，如果输入框是空的，浏览器会提示错误信息。</p>
 
+<input id="id1" type="number" max="100">
+<button onclick="myFunction4()">验证</button>
+
+<p id="demo7"></p>
+
 <script>
     a = 1; b = 2; c = a + b
     document.getElementById("demo1").innerHTML = c;
@@ -119,6 +124,26 @@
         document.getElementById("demo").innerHTML = text;
 
     }
+
+    function validateForm(){
+         var x=document.forms["myForm"]["email"].value;
+         var atpos=x.indexOf("@");
+         var dotpos=x.lastIndexOf(".");
+         if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
+             alert("不是一个有效的 e-mail 地址");
+             return false;
+         }
+    }
+
+    function myFunction4() {
+        var txt = "";
+        if (document.getElementById("id1").validity.rangeOverflow) {
+            txt = "输入的值太大了";
+        }
+        document.getElementById("demo7").innerHTML = txt;
+    }
+
+
 
 </script>
 
