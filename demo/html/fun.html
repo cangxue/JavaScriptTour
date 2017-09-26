@@ -8,6 +8,7 @@
 
 <p>查找最大数</p>
 <p id="demo"></p>
+<p id="demo1"></p>
 <script>
     x = findMax(1, 234, 500, 115, 44, 88);
 
@@ -24,6 +25,15 @@
     }
 
     document.getElementById("demo").innerHTML = x;
+
+    // 构造函数
+    function myFunction(arg1, arg2) {
+        this.firstName = arg1;
+        this.lastName = arg2;
+    }
+
+    var x = new myFunction("John", "Doe");
+    document.getElementById("demo1").innerHTML = x.firstName;
 </script>
 
 </body>
