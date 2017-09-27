@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML DOM</title>
+</head>
+<body>
+
+<!--元素查询-->
+<p>你好世界！</p>
+<div id="main">
+    <p> DOM 是非常有用的 </p>
+</div>
+<p class="intro">你好世界！</p>
+<p id="intro">你好世界！</p>
+<p>该实例展示了 <b>查询dom元素</b> 方法！</p>
+<script>
+    var x = document.getElementById("main"); // 通过 id 查找 HTML 元素
+    var y = x.getElementsByTagName("p"); // 通过标签名查找 HTML 元素
+    var z = document.getElementsByClassName("intro"); // 通过类名找到 HTML 元素
+    document.write("<p> id查询结果：" + x.innerHTML + "</p>");
+    document.write("<p> 签名查询结果：" + y[0].innerHTML + "</p>");
+    document.write("<p> 类名查询结果：" + z[0].innerHTML + "</p>");
+
+
+</script>
+
+</body>
+</html>
