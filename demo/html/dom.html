@@ -21,8 +21,22 @@
     document.write("<p> id查询结果：" + x.innerHTML + "</p>");
     document.write("<p> 签名查询结果：" + y[0].innerHTML + "</p>");
     document.write("<p> 类名查询结果：" + z[0].innerHTML + "</p>");
+</script>
 
+<!--改变 HTML-->
 
+<p id="p1">Hello World!</p>
+<img id="image" src="smiley.gif">
+<script>
+    document.write(Date()); // 改变 HTML 输出流
+
+    // 改变 HTML 内容
+    // document.getElementById(id).innerHTML=新的 HTML
+    document.getElementById("p1").innerHTML = "New, Hello World!";
+
+    // 改变 HTML 属性
+    // document.getElementById(id).attribute=新属性值
+    document.getElementById("image").src = "landscape.jpg";
 </script>
 
 </body>
