@@ -54,5 +54,31 @@
 <h1 id="id1">我的标题</h1>
 <button type="button"
         onclick="document.getElementById('id1').style.color='red'">点我！</button>
+
+
+
+<!--JavaScript HTML DOM 事件-->
+
+<h1 onclick="this.innerHTML='Ooops!'">点击文本</h1>
+<script>
+    function changetext(id) {
+        id.innerHTML="Ooops!";
+    }
+</script>
+
+<h1 onclick="changetext(this)">点击文本！</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
