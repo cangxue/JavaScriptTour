@@ -105,7 +105,18 @@ function displayDate() {
     });
 </script>
 
-
+<button id="myBtn2">点我</button>
+<script>
+var x = document.getElementById("myBtn2");
+x.addEventListener("click", myFunction);
+x.addEventListener("click", someOtherFunction);
+function myFunction() {
+    alert ("Hello World!")
+}
+function someOtherFunction() {
+    alert ("函数已执行!")
+}
+</script>
 
 
 
