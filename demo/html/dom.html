@@ -118,6 +118,15 @@ function someOtherFunction() {
 }
 </script>
 
+<div id="div1">
+	<p id="p3">这是一个段落。</p>
+	<p id="p4">这是另一个段落。</p>
+</div>
+<script>
+    var parent=document.getElementById("div1");
+    var child=document.getElementById("p3");
+    parent.removeChild(child);
+</script>
 
 
 
