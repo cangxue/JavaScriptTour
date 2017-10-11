@@ -6,12 +6,19 @@
 </head>
 <body>
 
-<!--用JavaScript输出文本-->
-<h1>我的第一个Web页面</h1>
+<h2>用JavaScript输出文本</h2>
+
 <p>我的第一个段落</p>
 <script>
     document.write(Date());
 </script>
+
+<h2>用JavaScript改变HTML元素</h2>
+<p id="p2">我的第二个段落。</p>
+<script>
+    document.getElementById("p2").innerHTML="段落已修改。";
+</script>
+
 
 
 </body>
