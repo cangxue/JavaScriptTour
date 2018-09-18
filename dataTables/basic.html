@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+
+    <!--第一步：引入Javascript / CSS （CDN）-->
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+
+    <script>
+        $(document).ready( 
+            function () {
+              $('#table_id_example').DataTable();
+             } 
+         );
+    </script>
+</head>
+<body>
+
+    <table id="table_id_example" class="display">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>xiao ming</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>xiao hua</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>zhang san</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>li si</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>wang wu</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>zhao liu</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>ma qi</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>yang ba</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>hou jiu</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
