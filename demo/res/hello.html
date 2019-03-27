@@ -1,44 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>hello world</title>
+
+    <script src="../js/hello.js"></script>
+
     <script>
         function headFunction() {
-            document.getElementById("demo2").innerHTML="head中的函数";
+            document.getElementById("demo2").innerHTML = "head中的函数";
         }
     </script>
 </head>
-<body>
-<h1>hello, world!</h1>
-<script>
-    document.write("<h3>这是标题</h3>");
-    document.write("<p>这是段落</p>");
-</script>
-<p id="demo2">head函数调用</p>
-<button type="button" onclick="headFunction()">点击一下</button>
 
-<p id="demo1">body函数调用</p>
-<button type="button" onclick="bodyFunction()">尝试一下</button>
+<body>
+    <h1>hello, world!</h1>
+
+    <p id="demo2">head函数调用</p>
+    <button type="button" onclick="headFunction()">点击一下</button>
+
+    <p id="demo1">body函数调用</p>
+    <button type="button" onclick="bodyFunction()">尝试一下</button>
+
+    <script>
+
+        document.write("<p>zhehsiwo</p>");
+        document.write("<h3>这是标题</h3>");
+        document.write("<p>这是段落</p>");
+
+        function bodyFunction() {
+            document.getElementById("demo1").innerHTML = "body中的函数";
+        }
+
+    </script>
+
+    <p id="demo">js文件调用</p>
+    <button type="button" onclick="helloFunction()">尝试一下</button>
+
+    <p id="demo3">外部调用</p>
+    <button type="button" onclick="outFunction()">尝试一下</button>
+    <script>
+        a = 5;
+        b = 6;
+        c = a + b;
+        console.log(c);
+    </script>
+
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:green; margin-top: 20px; width: 120px;height: 20px;padding: 40px;color: #ffffff">把鼠标移到上面</div>
+
+
+
+</body>
+
 <script>
-    function bodyFunction() {
-        document.getElementById("demo1").innerHTML="body中的函数";
+    function outFunction() {
+        document.getElementById("demo3").innerHTML = "外部的函数";
+    }
+
+    function mOver(obj) {
+        obj.innerHTML = "谢谢"
+    }
+
+    function mOut(obj) {
+        obj.innerHTML = "把鼠标移到上面"
     }
 </script>
 
-<p id="demo">js文件调用</p>
-<button type="button" onclick="helloFunction()">尝试一下</button>
-<script src="../js/hello.js"></script>
-
-<script>
-    window.alert("hello, world!")
-</script>
-
-<script>
-    a = 5;
-    b = 6;
-    c = a + b;
-    console.log(c);
-</script>
-</body>
 </html>

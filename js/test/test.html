@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>first test</title>
+</head>
+
+<body>
+
+    <script>
+        document.write("<h1>This is a heading</h1>");
+    </script>
+    <p id="demo">
+        改变HTML元素的内容.
+    </p>
+    <script>
+        function myFunction() {
+            x = document.getElementById("demo");
+            x.innerHTML = "Hello JavaScript!";
+            x.style.color = "#ff0000";
+        }
+    </script>
+    <button type="button" onclick="myFunction()">点击这里</button>
+
+    <input id="input" type="text">
+    <script>
+        function myFunction1() {
+            var x = document.getElementById("input").value;
+            if (x == "" || isNaN(x)) {
+                alert("Not Numberic");
+            }
+        }
+    </script>
+    <button type="button" onclick="myFunction1()">点击这里</button>
+
+    <script>
+        function name(params) {
+
+        }
+    </script>
+
+</body>
+
+</html>
