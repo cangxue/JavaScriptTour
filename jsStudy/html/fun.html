@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fun练习</title>
+</head>
+<body>
+
+<p>查找最大数</p>
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<p>局部变量计数。</p>
+<button type="button" onclick="myFunction2()">计数!</button>
+<p id="demo2">0</p>
+
+<script>
+    x = findMax(1, 234, 500, 115, 44, 88);
+
+    function findMax() {
+        var i, max = arguments[0];
+        if (arguments.length < 2) return max;
+
+        for (i = 0; i < arguments.length; i++) {
+            if (arguments[i] > max) {
+                max = arguments[i];
+            }
+        }
+        return max;
+    }
+
+    document.getElementById("demo").innerHTML = x;
+
+    // 构造函数
+    function myFunction(arg1, arg2) {
+        this.firstName = arg1;
+        this.lastName = arg2;
+    }
+
+    var x = new myFunction("John", "Doe");
+    document.getElementById("demo1").innerHTML = x.firstName;
+
+
+    // 闭包
+    var add = (function () {
+        var counter = 0;
+        return function () {
+            return counter += 1;
+        }
+    })();
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = add();
+    }
+
+</script>
+
+</body>
+</html>

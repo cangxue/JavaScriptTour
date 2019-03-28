@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML DOM</title>
+</head>
+<body>
+
+<!--元素查询-->
+<p>你好世界！</p>
+<div id="main">
+    <p> DOM 是非常有用的 </p>
+</div>
+<p class="intro">你好世界！</p>
+<p id="intro">你好世界！</p>
+<p>该实例展示了 <b>查询dom元素</b> 方法！</p>
+<script>
+    var x = document.getElementById("main"); // 通过 id 查找 HTML 元素
+    var y = x.getElementsByTagName("p"); // 通过标签名查找 HTML 元素
+    var z = document.getElementsByClassName("intro"); // 通过类名找到 HTML 元素
+    document.write("<p> id查询结果：" + x.innerHTML + "</p>");
+    document.write("<p> 签名查询结果：" + y[0].innerHTML + "</p>");
+    document.write("<p> 类名查询结果：" + z[0].innerHTML + "</p>");
+</script>
+
+<!--改变 HTML-->
+
+<p id="p1">Hello World!</p>
+<img id="image" src="smiley.gif">
+<script>
+    document.write(Date()); // 改变 HTML 输出流
+
+    // 改变 HTML 内容
+    // document.getElementById(id).innerHTML=新的 HTML
+    document.getElementById("p1").innerHTML = "New, Hello World!";
+
+    // 改变 HTML 属性
+    // document.getElementById(id).attribute=新属性值
+    document.getElementById("image").src = "landscape.jpg";
+</script>
+
+<!--改变CSS-->
+<p id="p2">Hello World!</p>
+
+<script>
+    // 改变 HTML 样式
+    // document.getElementById(id).style.property=新样式
+    document.getElementById("p2").style.color="blue";
+    document.getElementById("p2").style.fontFamily="Arial";
+    document.getElementById("p2").style.fontSize="larger";
+</script>
+
+<!--使用事件-->
+<h1 id="id1">我的标题</h1>
+<button type="button"
+        onclick="document.getElementById('id1').style.color='red'">点我！</button>
+
+
+
+<!--JavaScript HTML DOM 事件-->
+
+<h1 onclick="this.innerHTML='Ooops!'">点击文本</h1>
+<script>
+    function changetext(id) {
+        id.innerHTML="Ooops!";
+    }
+</script>
+
+<h1 onclick="changetext(this)">点击文本！</h1>
+
+
+<script>
+function myFunction(){
+	var x=document.getElementById("fname");
+	x.value=x.value.toUpperCase();
+}
+</script>
+
+输入你的名字: <input type="text" id="fname" onchange="myFunction()">
+<p>当你离开输入框后，函数将被触发，将小写字母转为大写字母。</p>
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">Mouse Over Me</div>
+<script>
+function mOver(obj){
+	obj.innerHTML="Thank You"
+}
+function mOut(obj){
+	obj.innerHTML="Mouse Over Me"
+}
+</script>
+
+<button id="myBtn">点我</button>
+<p id="demo"></p>
+<script>
+document.getElementById("myBtn").addEventListener("click", displayDate);
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+}
+</script>
+
+<button id="myBtn1">点我</button>
+<script>
+    document.getElementById("myBtn1").addEventListener("click", function () {
+        alert("Hello World!");
+    });
+</script>
+
+<button id="myBtn2">点我</button>
+<script>
+var x = document.getElementById("myBtn2");
+x.addEventListener("click", myFunction);
+x.addEventListener("click", someOtherFunction);
+function myFunction() {
+    alert ("Hello World!")
+}
+function someOtherFunction() {
+    alert ("函数已执行!")
+}
+</script>
+
+<div id="div1">
+	<p id="p3">这是一个段落。</p>
+	<p id="p4">这是另一个段落。</p>
+</div>
+<script>
+    var parent=document.getElementById("div1");
+    var child=document.getElementById("p3");
+    parent.removeChild(child);
+</script>
+
+
+
+
+
+
+</body>
+</html>

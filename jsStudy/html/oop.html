@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function person(firstname, lastname, age, eyecolor) {
+            this.firstname = firstname;
+            this.lastname = firstname;
+            this.age = age;
+            this.eyecolor = eyecolor;
+
+            this.changeName = chageName;
+            function chageName(name) {
+                this.lastname = name;
+            }
+        }
+
+        myFather = new person("Bill", "Gates", 56, "blue");
+        document.write(myFather.firstname + " is " + myFather.age);
+
+
+        myMother = new person("Steve", "Jobs", 56, "green");
+        myMother.changeName("Ballmer");
+        document.write("<br />" + myMother.lastname);
+
+
+    </script>
+
+</body>
+
+
+</html>
