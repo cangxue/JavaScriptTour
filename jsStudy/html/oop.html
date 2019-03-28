@@ -10,7 +10,19 @@
 
 <body>
 
+    <p>点击下面的按钮，循环遍历对象 "person" 的属性。</p>
+    <button onclick="myFunction()">点击这里</button>
+    <p id="demo"></p>
+
     <script>
+
+        person = new Object();
+        person.firstname = "Bill";
+        person.lastname = "Gates";
+        person.age = 56;
+        person.eyecolor = "blue";
+        document.write(person.firstname + " is " + person.age + " years old.");
+
         function person(firstname, lastname, age, eyecolor) {
             this.firstname = firstname;
             this.lastname = firstname;
@@ -26,12 +38,42 @@
         myFather = new person("Bill", "Gates", 56, "blue");
         document.write(myFather.firstname + " is " + myFather.age);
 
-
         myMother = new person("Steve", "Jobs", 56, "green");
         myMother.changeName("Ballmer");
         document.write("<br />" + myMother.lastname);
 
 
+        function myFunction() {
+            var x;
+            var txt = "";
+            var person = { fname: "Bill", lname: "Gates", age: 56 };
+
+            for (x in person) {
+                txt = txt + person[x];
+            }
+
+            document.getElementById("demo").innerHTML = txt;
+        }
+
+        var txt = "Hello World!"
+
+        document.write("<p>Strike: " + txt.strike() + "</p>")
+
+    </script>
+
+    <p id="demo"></p>
+
+    <script>
+        var w = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+
+        var h = window.innerHeight
+            || document.documentElement.clientHeight
+            || document.body.clientHeight;
+
+        x = document.getElementById("demo");
+        x.innerHTML = "浏览器的内部窗口宽度：" + w + "，高度：" + h + "。"
     </script>
 
 </body>
