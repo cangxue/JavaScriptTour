@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            animation: mymove 5s infinite;
+            -webkit-animation: mymove 5s infinite;
+        }
+
+        @keyframes mymove {
+            /* from {
+                top: 0px;
+            }
+
+            to {
+                top: 200px;
+            } */
+
+            0% {
+                top: 0px;
+                background: red;
+                width: 50px;
+                height: 50px;
+            }
+
+            25% {
+                top: 200px;
+                background: green;
+                width: 100px;
+                height: 100px;
+            }
+
+            75% {
+                top: 50px;
+                background: green;
+                width: 100px;
+                height: 100px;
+            }
+
+            100% {
+                top: 100px;
+                background: yellow;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
